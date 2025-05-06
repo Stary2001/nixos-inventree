@@ -8,7 +8,7 @@ from multiprocessing.pool import ThreadPool
 
 from generate_package_list import get_requirements_list, BASE_REQUIREMENTS
 
-PYTHON_PACKAGES = "python311Packages"
+PYTHON_PACKAGES = "python312Packages"
 CLEANED_REQUIREMENTS = Path(".clean-requirements.txt")
 
 ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
@@ -18,7 +18,7 @@ base_list = get_requirements_list()
 def only_existing_pkgs(package):
     search_str = f"{PYTHON_PACKAGES}.{package}"
     proc = subprocess.run(
-        f'nix search nixpkgs "{search_str}"',
+        f'nix search github:NixOS/nixpkgs/nixos-24.11 "{search_str}"',
         shell=True,
         capture_output=True,
         text=True,
