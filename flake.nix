@@ -9,6 +9,7 @@
     };
     pip2nix = {
       url = "github:nix-community/pip2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
