@@ -27,12 +27,12 @@ stdenv.mkDerivation rec {
       owner = "inventree";
       repo = "InvenTree";
       rev = version;
-      hash = "sha256-L2CjSLnbJuik4I/I3fqtksAEK/+SiDDdJTYAbam7Jh4=";
+      hash = "sha256-Hu0JG2Tg28RoU99qx0CTMyPpHGg+0t7qcjVBkwbe/Mk=";
     })
     (fetchzip {
       name = "inventree-frontend";
       url = "https://github.com/inventree/InvenTree/releases/download/${version}/frontend-build.zip";
-      hash = "sha256-Lf9TICJTNZa4SzrNNYJHNGFWQBJNCCDxGAQD03hLVo8=";
+      hash = "sha256-Fqv8KUPX8MVR0cqJfV7jwMGhUvMRdFNay1AdyzadnYs=";
       stripRoot=false;
     })
   ];
