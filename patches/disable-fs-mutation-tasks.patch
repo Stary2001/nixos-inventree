@@ -1,7 +1,7 @@
-diff --git a/tasks.py b/tasks.py
+diff --git a/src/tasks.py b/src/tasks.py
 index 5ed434d99..bbc6fe115 100644
---- a/tasks.py
-+++ b/tasks.py
+--- a/src/tasks.py
++++ b/src/tasks.py
 @@ -301,6 +301,8 @@ def plugins(c, uv=False):
  )
  def install(c, uv=False, skip_plugins=False):
