@@ -19,7 +19,7 @@ in
 
 stdenv.mkDerivation rec {
   pname = "inventree-src";
-  version = "0.15.4";
+  version = "0.17.11";
 
   srcs = [
     (fetchFromGitHub {
@@ -31,9 +31,7 @@ stdenv.mkDerivation rec {
     })
     (fetchzip {
       name = "inventree-frontend";
-      # HACK: workaround inventree/InvenTree#7476
-      #url = "https://github.com/inventree/InvenTree/releases/download/${version}/frontend-build.zip";
-      url = "https://github.com/Gigahawk/InvenTree/releases/download/0.15.4-frontend-vite/frontend-build.zip";
+      url = "https://github.com/inventree/InvenTree/releases/download/${version}/frontend-build.zip";
       hash = "sha256-Lf9TICJTNZa4SzrNNYJHNGFWQBJNCCDxGAQD03hLVo8=";
       stripRoot=false;
     })
