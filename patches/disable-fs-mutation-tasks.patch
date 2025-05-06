@@ -1,47 +1,50 @@
---- a/src/tasks.py
-+++ b/src/tasks.py
-@@ -233,6 +233,8 @@ def install(c, uv=False):
-     INSTALL_FILE = 'src/backend/requirements.txt'
- 
-     print(f"Installing required python packages from '{INSTALL_FILE}'")
-+    print(f"Skipping install on NixOS")
+diff --git a/tasks.py b/tasks.py
+index 5ed434d99..bbc6fe115 100644
+--- a/tasks.py
++++ b/tasks.py
+@@ -301,6 +301,8 @@ def plugins(c, uv=False):
+ )
+ def install(c, uv=False, skip_plugins=False):
+     """Installs required python packages."""
++    print("Skipping static file generation on NixOS")
 +    return
+     # Ensure path is relative to *this* directory
+     INSTALL_FILE = localDir().joinpath('src/backend/requirements.txt')
  
-     if not Path(INSTALL_FILE).is_file():
-         raise FileNotFoundError(f"Requirements file '{INSTALL_FILE}' not found")
-@@ -319,6 +321,8 @@ def remove_mfa(c, mail=''):
- @task(help={'frontend': 'Build the frontend'})
- def static(c, frontend=False):
+@@ -410,6 +412,8 @@ def remove_mfa(c, mail=''):
+ )
+ def static(c, frontend=False, clear=True, skip_plugins=False):
      """Copies required static files to the STATIC_ROOT directory, as per Django requirements."""
 +    print("Skipping static file generation on NixOS")
 +    return
      manage(c, 'prerender')
  
      if frontend and node_available():
-@@ -335,6 +339,8 @@ def translate_stats(c):
+@@ -438,6 +442,8 @@ def translate_stats(c):
  
      The file generated from this is needed for the UI.
      """
 +    print("Skipping translating stats on NixOS")
 +    return
      # Recompile the translation files (.mo)
-     # We do not run 'invoke translate' here, as that will touch the source (.po) files too!
+     # We do not run 'invoke dev.translate' here, as that will touch the source (.po) files too!
      try:
-@@ -1076,6 +1082,8 @@ def frontend_compile(c):
+@@ -1246,6 +1252,8 @@ def frontend_compile(c):
+     Args:
          c: Context variable
      """
-     print('Compiling frontend code...')
 +    print("Skipping frontend compile on NixOS")
 +    return
- 
+     info('Compiling frontend code...')
      frontend_install(c)
      frontend_trans(c)
-@@ -1168,6 +1176,8 @@ def frontend_download(
+@@ -1338,6 +1346,9 @@ def frontend_download(
+ 
      import requests
  
-     print('Downloading frontend...')
 +    print("Skipping frontend download on NixOS")
 +    return
++
+     info('Downloading frontend...')
  
      # globals
-     default_headers = {'Accept': 'application/vnd.github.v3+json'}
