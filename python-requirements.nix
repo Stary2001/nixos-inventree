@@ -30,6 +30,7 @@ with ps; [
   django-formtools
   django-ical
   django-import-export
+  django-ipware
   django-js-asset
   django-maintenance-mode
   django-markdownify
@@ -45,6 +46,7 @@ with ps; [
   django-sql-utils
   django-sslserver
   django-stdimage
+  django-structlog
   django-taggit
   django-user-sessions
   django-weasyprint
@@ -55,6 +57,8 @@ with ps; [
   dulwich
   et-xmlfile
   feedparser
+  flexcache
+  flexparser
   fonttools
   googleapis-common-protos
   grpcio
@@ -64,14 +68,15 @@ with ps; [
   idna
   importlib-metadata
   inflection
+  isodate
   itypes
   jinja2
   jsonschema
   jsonschema-specifications
+  lxml
   markdown
   markuppy
   markupsafe
-  oauthlib
   odfpy
   openpyxl
   opentelemetry-api
@@ -93,6 +98,7 @@ with ps; [
   pillow
   pint
   pip-licenses
+  platformdirs
   prettytable
   protobuf
   py-moneyed
@@ -100,30 +106,32 @@ with ps; [
   pydyf
   pyjwt
   pyphen
-  pypng
   python-barcode
   python-dateutil
   python-dotenv
   python-fsutil
+  python-ipware
   python3-openid
+  python3-saml
   pytz
   pyyaml
   qrcode
   rapidfuzz
   redis
   referencing
-  regex
   requests
-  requests-oauthlib
   rpds-py
   sentry-sdk
   setuptools
   sgmllib3k
   six
   sqlparse
+  structlog
   tablib
   tinycss2
+  tomli
   typing-extensions
+  tzdata
   uritemplate
   urllib3
   wcwidth
@@ -133,6 +141,7 @@ with ps; [
   wrapt
   xlrd
   xlwt
+  xmlsec
   zipp
   zopfli
 ]
